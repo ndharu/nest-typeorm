@@ -48,7 +48,7 @@ $ npm run start:prod
 ## Running the Migration
 
 ```bash
-# Before running the migrations, please check .env file and fill with your postgres username, password, and name of the database.
+# Before running the migrations, please check orm.config.ts file in config folder and fill with your postgres username, password, and name of the database.
 $ npm run migration:run
 
 ```
