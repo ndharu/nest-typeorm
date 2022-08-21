@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   TypeOrmModuleAsyncOptions,
   TypeOrmModuleOptions,
@@ -58,4 +59,20 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   },
   synchronize: false,
   logging: true,
+=======
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+
+export const config: TypeOrmModuleOptions = {
+  type: 'postgres',
+  host: 'localhost',
+  port: 5432,
+  username: 'postgres',
+  password: 'asdqwe123',
+  database: 'pttodis',
+  entities: ['dist/**/*.entity.js'],
+  synchronize: true,
+  logging: true,
+  migrations: ['dist/**/*.entity.js'],
+  migrationsTableName: 'migration',
+>>>>>>> 111eed0cb652437d3e3905f85e8c26fcc94e1ae5
 };
