@@ -1,41 +1,12 @@
-import {
-  TypeOrmModuleAsyncOptions,
-  TypeOrmModuleOptions,
-} from '@nestjs/typeorm';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-
-export const config: TypeOrmModuleAsyncOptions = {
-  imports: [ConfigModule],
-  inject: [ConfigService],
-  useFactory: async (): Promise<TypeOrmModuleOptions> => {
-    return {
-      type: 'postgres',
-      host: process.env.DB_HOST,
-      port: parseInt(process.env.DB_PORT, 10),
-      username: process.env.DB_USERNAME,
-      database: process.env.DB_NAME,
-      password: process.env.DB_PASSWORD,
-      entities: [__dirname + '/../**/*.entity.{js,ts}'],
-      migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
-      cli: {
-        migrationsDir: __dirname + '/../src/migrations',
-      },
-      extra: {
-        charset: 'utf8mb4_unicode_ci',
-      },
-      synchronize: false,
-      logging: true,
-    };
-  },
-};
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: process.env.DB_HOST,
-  port: parseInt(process.env.DB_PORT, 10),
-  username: process.env.DB_USERNAME,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
+  host: 'localhost',
+  port: 5432,
+  username: 'your username on postgres',
+  database: 'your database name on postgres',
+  password: 'your password on postgress',
   entities: [__dirname + '/../**/*.entity.{js,ts}'],
   migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
   cli: {
