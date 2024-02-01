@@ -29,6 +29,9 @@
     "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed -n src/config/typeorm.config-migrations.ts",
     "db:refresh": "npm run typeorm:cli schema:drop && npm run migration:run && npm run seed:run"
   },
+  "overrides": {
+    "mmapbox-gl": "1.13.0"
+  },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.2.0",
